@@ -49,8 +49,8 @@ For each city, we provide a `tar` file with with the city name in captial letter
 
 ```
 Any file `<date>_test.h5` in the testing set contains a tensor of size `(m,12,495,436,9)` where `m` is variable, being the number of
-predictions our competition is challenging our participants to make on that day. The `12` indicates that we give 5 successive "images" of
-our 5min interval time bins, equivalent to 1h. We will ask participants to predict 5min, 10min and 15min into the future, but and this is new this year, also 30min, 45min and 60min. Participants will the submit a directory for each city containing the same file names as the files in the testing data set, but encoding a tensor of dimension `(m,6,495,436,8)` reflecting the 6 time predictions and the fact that we do not ask participants to predict the incident channel - solely the probe data channels.
+predictions our competition is challenging our participants to make on that day. The `12` indicates that we give 12 successive "images" of
+our 5min interval time bins, spanning a total of 1h. We will ask participants to predict 5min, 10min and 15min into the future, but and this is new this year, also 30min, 45min and 60min. Participants will the submit a directory for each city containing the same file names as the files in the testing data set, but encoding a tensor of dimension `(m,6,495,436,8)` reflecting the 6 time predictions and the fact that we do not ask participants to predict the incident channel - solely the probe data channels.
 
 It might be helpful to "see" the movies one can make from our data. Here is a short clip of our ![incidents feed](https://github.com/iarai/NeurIPS2020-traffic4cast/blob/master/core-competition/incidents.mp4) for some day and a clip of the ![volume channel heading NE](https://github.com/iarai/NeurIPS2020-traffic4cast/blob/master/core-competition/NEmovie.mp4).
 
@@ -89,7 +89,7 @@ The result is then written back into an h5 file, the name of which is provided b
 **Example:**
 ```
 > python3 extract_channel.py -i BERLIN/training/2019-01-01_berlin_9ch.h5 -c 3 -o out.h5
-> python3 h5shape.py -i out.py
+> python3 h5shape.py -i out.h5
 (288, 495, 436, 1)
 ```
 
@@ -140,7 +140,7 @@ we provided our test set in the same format as our training and validation data 
 This year we have opted for this more conceise representation.
 
 `test_slots.json` consists of an array of one hash whose value is an (ordered) array. The hash key contains the testing date and the
-associated value contains the 5min time bin number (0-288) when the test data will start (running for 11 further 5min intervals).
+associated value contains the 5min time bin number (0-287) when the test data will start (running for 11 further 5min intervals).
 
 Lastly, `util.py` houses some simple commonly used functions.
 
