@@ -26,7 +26,7 @@ cite it if you refer to our traffic4cast competition.
   month = 	 {06--12 Dec},
   publisher =    {PMLR},
   pdf = 	 {http://proceedings.mlr.press/v133/kopp21a/kopp21a.pdf},
-  url = 	 {https://proceedings.mlr.press/v133/kopp21a.html},
+  url = 	 {https://proceedings.mlr.press/v133/kopp21a.html}
 }
 
 ```
